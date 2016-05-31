@@ -17,7 +17,7 @@ class StudipDevTools extends StudIPPlugin implements SystemPlugin {
 
         $navigation = new AutoNavigation(_('StudipDevTools'));
         $navigation->setURL(PluginEngine::GetURL($this, array(), 'migration/index'));
-        $navigation->setImage(Assets::image_path('blank.gif'));
+        $navigation->setImage(Assets::image_path('icons/32/lightblue/tools.png'));
         Navigation::addItem('/studipdevtools', $navigation);
         $navigation->addSubNavigation('migration', new AutoNavigation(_('MigrationGenerator'), PluginEngine::GetURL($this, array(), 'migration/index')));
         $navigation->addSubNavigation('sormform', new AutoNavigation(_('Sorm2Form'), PluginEngine::GetURL($this, array(), 'sormform/index')));
