@@ -22,6 +22,7 @@ class StudipDevTools extends StudIPPlugin implements SystemPlugin {
         $navigation->addSubNavigation('migration', new AutoNavigation(_('MigrationGenerator'), PluginEngine::GetURL($this, array(), 'migration/index')));
         $navigation->addSubNavigation('sormform', new AutoNavigation(_('Sorm2Form'), PluginEngine::GetURL($this, array(), 'sormform/index')));
         $navigation->addSubNavigation('less', new AutoNavigation(_('Less'), PluginEngine::GetURL($this, array(), 'color/index')));
+        $navigation->addSubNavigation('keysearch', new AutoNavigation(_('KeySearch'), PluginEngine::GetURL($this, array(), 'keysearch/index')));
 
         shell_exec('cd '.$GLOBALS['STUDIP_BASE_PATH'].';make less');
     }
