@@ -28,7 +28,7 @@ class ColorController extends StudipController
         }
 
         if ($newcolor) {
-            $current = preg_replace('/@base-color: (#[0-9a-fA-F]{3,6});/', '@base-color: '.$newcolor.'; ', $current);
+            $current = preg_replace('/@base-color: (#[0-9a-fA-F]{3,6});/', '@base-color: '.$newcolor.';', $current);
             file_put_contents($file, $current);
             shell_exec('cd '.$GLOBALS['STUDIP_BASE_PATH'].';make less');
         }
