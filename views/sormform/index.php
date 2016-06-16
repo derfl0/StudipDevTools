@@ -1,4 +1,4 @@
-<form class="studip_form" method='post'>
+<form class="default" method='post'>
     <fieldset>
         <legend>Sorm</legend>
         <label>
@@ -48,6 +48,20 @@
     <? endif; ?>
     <?= Studip\Button::create('Aktualisieren') ?>
 </form>
+
+<section class="contentbox">
+    <header>
+        <h1>blabalballa</h1>
+    </header>
+    <article class="open">
+        <header>
+            <h1><a>wenfoirnbeownfwodnmeofmweop</a></h1>
+        </header>
+        <p>sdagffdhdgfsdfg</p>
+    </article>
+</section>
+
+<ul></ul>
 
 
 <? if($metadata): ?>
