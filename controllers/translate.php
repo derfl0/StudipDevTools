@@ -43,7 +43,7 @@ class TranslateController extends StudipController
 
         // Need PATH variable
         if (PHP_OS == 'Darwin') {
-            $ex = 'export PATH="/usr/local/bin/";';
+            $ex = 'export PATH="$PATH:/usr/local/bin/";';
         }
 
         $phpfiles = ($this->getPhpFiles($path));
@@ -74,7 +74,7 @@ class TranslateController extends StudipController
         $path = $GLOBALS['PLUGINS_PATH'].DIRECTORY_SEPARATOR.$plugin['path'];
         $lang = 'en';
         if (PHP_OS == 'Darwin') {
-            $ex = 'export PATH="/usr/local/bin/";';
+            $ex = 'export PATH="$PATH:/usr/local/bin/";';
         }
         $langpath = $path.DIRECTORY_SEPARATOR.'locale'.DIRECTORY_SEPARATOR.$lang.DIRECTORY_SEPARATOR.'LC_MESSAGES';
         $pos = glob($langpath.DIRECTORY_SEPARATOR.'*.po');
