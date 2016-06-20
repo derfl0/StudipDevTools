@@ -25,6 +25,7 @@ class StudipDevTools extends StudIPPlugin implements SystemPlugin {
         $navigation->addSubNavigation('less', new AutoNavigation(_('Less'), PluginEngine::GetURL($this, array(), 'color/index')));
         $navigation->addSubNavigation('keysearch', new AutoNavigation(_('KeySearch'), PluginEngine::GetURL($this, array(), 'keysearch/index')));
         $navigation->addSubNavigation('translate', new AutoNavigation(_('Plugin Translation'), PluginEngine::GetURL($this, array(), 'translate/index')));
+        $navigation->addSubNavigation('git', new AutoNavigation(_('PluginGitLoad'), PluginEngine::GetURL($this, array(), 'git/index')));
 
         shell_exec('cd '.$GLOBALS['STUDIP_BASE_PATH'].';make less');
     }
