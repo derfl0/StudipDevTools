@@ -1,4 +1,4 @@
-<form class="default" method='post'>
+<form class="studip_form" method='post'>
     <fieldset>
         <legend>Sorm</legend>
         <label>
@@ -49,34 +49,20 @@
     <?= Studip\Button::create('Aktualisieren') ?>
 </form>
 
-<section class="contentbox">
-    <header>
-        <h1>blabalballa</h1>
-    </header>
-    <article class="open">
-        <header>
-            <h1><a>wenfoirnbeownfwodnmeofmweop</a></h1>
-        </header>
-        <p>sdagffdhdgfsdfg</p>
-    </article>
-</section>
-
-<ul></ul>
-
 
 <? if($metadata): ?>
-<h1>Code</h1>
-<textarea style='width: 80%; height: 400px;'>
+    <h1>Code</h1>
+    <textarea style='width: 80%; height: 400px;'>
 <form class='studip_form' method='post' action=''>
-<? foreach ($metadata['fields'] as $field): ?>
-<? if ($type[$field['name']]): ?>
-<?= $this->render_partial('sormform/'.$type[$field['name']], array(
-    'fulltext' => $fulltext[$field['name']] ? : $field['name'],
-    'name' => ((Request::get('request') ? : strtolower(Request::get('sorm')))).'['.$field['name'].']',
-    'value' => Request::get('trailsview').'->'. $field['name'],
-)) ?>
-<? endif; ?>
-<? endforeach; ?>
+    <? foreach ($metadata['fields'] as $field): ?>
+        <? if ($type[$field['name']]): ?>
+            <?= $this->render_partial('sormform/'.$type[$field['name']], array(
+                'fulltext' => $fulltext[$field['name']] ? : $field['name'],
+                'name' => ((Request::get('request') ? : strtolower(Request::get('sorm')))).'['.$field['name'].']',
+                'value' => Request::get('trailsview').'->'. $field['name'],
+            )) ?>
+        <? endif; ?>
+    <? endforeach; ?>
 </form>
 </textarea>
 <? endif; ?>
