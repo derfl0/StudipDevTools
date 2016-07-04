@@ -34,4 +34,15 @@
             <? var_dump($_SERVER); ?>
         </section>
     </article>
+
+    <article>
+        <header>
+            <h1>
+                <a>$_COOKIE</a>
+            </h1>
+        </header>
+        <section>
+            <? var_dump($_COOKIE); ?>
+        </section>
+    </article>
 </section>

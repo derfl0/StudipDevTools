@@ -14,6 +14,11 @@ class StudipDevTools extends StudIPPlugin implements SystemPlugin {
 
     public function __construct() {
         parent::__construct();
+        $file_db = new PDO('sqlite:studip.sqlite3');
+        // Set errormode to exceptions
+        $file_db->setAttribute(PDO::ATTR_ERRMODE,
+            PDO::ERRMODE_EXCEPTION);
+        //DBManager::getInstance()->setConnection('studip', $file_db);
 
         $navigation = new AutoNavigation(_('StudipDevTools'));
         $navigation->setURL(PluginEngine::GetURL($this, array(), 'varinfo/index'));
@@ -26,7 +31,7 @@ class StudipDevTools extends StudIPPlugin implements SystemPlugin {
         $navigation->addSubNavigation('keysearch', new AutoNavigation(_('KeySearch'), PluginEngine::GetURL($this, array(), 'keysearch/index')));
         $navigation->addSubNavigation('translate', new AutoNavigation(_('Plugin Translation'), PluginEngine::GetURL($this, array(), 'translate/index')));
         $navigation->addSubNavigation('git', new AutoNavigation(_('PluginGitLoad'), PluginEngine::GetURL($this, array(), 'git/index')));
-
+        $navigation->addSubNavigation('database', new AutoNavigation(_('Datenbank'), PluginEngine::GetURL($this, array(), 'database/index')));
         shell_exec('cd '.$GLOBALS['STUDIP_BASE_PATH'].';make less');
     }
 
